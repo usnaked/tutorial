@@ -34,9 +34,8 @@ public class Sorting {
     }
 
     public static int[] bubbleSort(int[] arrayToSort) {
-        int n;
-        int[] result = new int[arrayToSort.length];
-        for (n = arrayToSort.length; n > 1; n--) {
+        //int[] result = new int[arrayToSort.length];
+        for (int n = arrayToSort.length; n > 1; n--) {
             for (int i = 0; i < arrayToSort.length - 1; i++) {
                 if (arrayToSort[i] > arrayToSort[i + 1]) {
                     int buffer = arrayToSort[i];
