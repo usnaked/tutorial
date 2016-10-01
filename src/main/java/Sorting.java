@@ -35,15 +35,16 @@ public class Sorting {
 
     public static int[] bubbleSort(int[] arrayToSort) {
         //int[] result = new int[arrayToSort.length];
-        for (int n = arrayToSort.length; n > 1; n--) {
-            for (int i = 0; i < arrayToSort.length - 1; i++) {
-                if (arrayToSort[i] > arrayToSort[i + 1]) {
-                    int buffer = arrayToSort[i];
-                    arrayToSort[i] = arrayToSort[i + 1];
-                    arrayToSort[i + 1] = buffer;
+        int[] clonedArray = arrayToSort.clone();
+        for (int n = clonedArray.length; n > 1; n--) {
+            for (int i = 0; i < clonedArray.length - 1; i++) {
+                if (clonedArray[i] > clonedArray[i + 1]) {
+                    int buffer = clonedArray[i];
+                    clonedArray[i] = clonedArray[i + 1];
+                    clonedArray[i + 1] = buffer;
                 }
             }
         }
-        return arrayToSort;
+        return clonedArray;
     }
 }
