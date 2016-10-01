@@ -10,7 +10,7 @@ public class Sorting {
         rnd.setSeed(System.currentTimeMillis());
 
         int[] testArray = {-2, 4, 1, 0, 8, 3, 2};
-        int[] another = generateArray(10, 7, 8, rnd);
+        int[] another = generateArray(10, -3, 3, rnd);
         int[] a = bubbleSort(another);
         for (int elem: a) {
             System.out.print(elem + " ");
@@ -24,7 +24,7 @@ public class Sorting {
         for (int i = 0; i < numberOfElements; i++) {
             int generatedValue = 0;
             if (minValue < 0 && maxValue < 0) {
-                generatedValue = Math.abs(maxValue) - Math.abs(minValue) - 1;
+                generatedValue = Math.abs(minValue) - Math.abs(maxValue);
                 generatedArray[i] = -(rnd.nextInt(generatedValue) + 2);
             } else {
                 generatedArray[i] = rnd.nextInt(maxValue - minValue) + minValue;
