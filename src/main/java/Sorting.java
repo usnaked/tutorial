@@ -15,7 +15,18 @@ public class Sorting {
         for (int elem: a) {
             System.out.print(elem + " ");
         }
-        System.out.print("");
+        System.out.println("");
+        System.out.println("testArray data:");
+        for (int elem: testArray) {
+            System.out.print(elem + " ");
+        }
+        System.out.println("");
+        insertSort(testArray);
+        System.out.println("Insert Sort:");
+        for (int elem: testArray) {
+            System.out.print(elem + " ");
+        }
+        System.out.println("");
     }
 
     public static int[] generateArray(int numberOfElements, int minValue, int maxValue, Random rnd) {
@@ -46,5 +57,14 @@ public class Sorting {
             }
         }
         return clonedArray;
+    }
+
+    public static void insertSort(int[] arrayToSort) {
+        for (int i = 1; i < arrayToSort.length; i++)
+            for (int j = i; j > 0 && arrayToSort[j - 1] > arrayToSort[j]; j--) {
+                int buffer = arrayToSort[j];
+                arrayToSort[j] = arrayToSort[j - 1];
+                arrayToSort[j - 1] = buffer;
+            }
     }
 }
